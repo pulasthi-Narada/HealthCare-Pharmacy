@@ -36,18 +36,18 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        //final TextView textView = root.findViewById(R.id.text_home);
 
+       // set Home_imgeslider object in imgs object variable
         imgs = root.findViewById(R.id.Home_imgeslider);
 
+        // set Home_Products_see_all_txtView  object in categorySeeAll object variable
         categorySeeAll = root.findViewById(R.id.Home_Products_see_all_txtView);
 
-
+        // set Offers_linear_layout  object in offersLinearLayout object variable
         offersLinearLayout = root.findViewById(R.id.Offers_linear_layout);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                //textView.setText(s);
 
                 //image slider method
                 setImageSlider();
@@ -68,11 +68,11 @@ public class HomeFragment extends Fragment {
     }
 
     private void categorySeeAll() {
-
+        // this is category See All txtview   click kListener
         categorySeeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // start Categories Activity
                 Intent intent = new Intent(getActivity(), CategoriesActivity.class);
                 startActivity(intent);
 
@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
         offersLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // start Offers Activity
                 Intent intent = new Intent(getActivity(), OffersActivity.class);
                 startActivity(intent);
 
@@ -97,13 +97,15 @@ public class HomeFragment extends Fragment {
 
     private void setImageSlider() {
 
+
         List<SlideModel> slideModels = new ArrayList<>();
+        // set image url foor image sliders
         slideModels.add(new SlideModel("https://raw.githubusercontent.com/HealthCare-Pharmacy/images/main/HealthCare%20Pharmacy%20logo.png"));
         slideModels.add(new SlideModel("https://github.com/HealthCare-Pharmacy/images/blob/main/Best-online-Medicine-Delivery-App.jpg?raw=true"));
         slideModels.add(new SlideModel("https://github.com/HealthCare-Pharmacy/images/blob/main/addd4.jpg?raw=true"));
         slideModels.add(new SlideModel("https://github.com/HealthCare-Pharmacy/images/blob/main/_20201225_214131.JPG?raw=true"));
 
-
+        // set image in   image sliders
         imgs.setImageList(slideModels,true);
     }
 }
