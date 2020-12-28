@@ -7,12 +7,14 @@
     tools:context=".UploadPrescriptionActivity">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="121dp"
-        android:layout_height="70dp"
+        android:id="@+id/UploadPrescription_textView"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
         android:text="@string/Upload_Prescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
 </androidx.constraintlayout.widget.ConstraintLayout>
