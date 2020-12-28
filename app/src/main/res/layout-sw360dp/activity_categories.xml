@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoriesActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="3"
+        android:columnCount="2">
+
+        <ImageView
+            android:id="@+id/categories_diabetic_care_imagView"
+            android:padding="10dp"
+            android:layout_width="175dp"
+            android:layout_height="133dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/diabetic_care" />
+        <ImageView
+            android:id="@+id/categories_household_imagView"
+            android:padding="10dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="175dp"
+            android:layout_height="133dp"
+            app:srcCompat="@drawable/household" />
+        <ImageView
+            android:id="@+id/categories_intimacy_imagView"
+            android:padding="10dp"
+            android:layout_width="175dp"
+            android:layout_height="133dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/intimacy" />
+        <ImageView
+            android:id="@+id/categories_medical_devies_imagView"
+            android:padding="10dp"
+            android:layout_width="175dp"
+            android:layout_height="133dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/medical_devies" />
+
+        <ImageView
+            android:id="@+id/categories_mothercare_baby_care_imagView"
+            android:padding="10dp"
+            android:layout_width="175dp"
+            android:layout_height="133dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:srcCompat="@drawable/mothercare_baby_care" />
+
+        <ImageView
+            android:id="@+id/categories_prescription_imagView"
+            android:padding="10dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_width="175dp"
+            android:layout_height="133dp"
+            app:srcCompat="@drawable/prescription" />
+
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

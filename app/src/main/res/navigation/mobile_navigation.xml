@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.healthcarepharmacy.ui.home.HomeFragment"
+        android:label="@string/Search_Buy_Medicine"
+        tools:layout="@layout/fragment_home" />
+
+    <activity
+        android:id="@+id/nav_Upload_Prescription"
+        android:name="com.healthcarepharmacy.UploadPrescriptionActivity"
+        android:label="@string/Upload_Prescription"
+        tools:layout="@layout/activity_upload_prescription" />
+
+    <activity
+        android:id="@+id/nav_Categories"
+        android:name="com.healthcarepharmacy.CategoriesActivity"
+        android:label="@string/Categories"
+        tools:layout="@layout/activity_categories" />
+</navigation>

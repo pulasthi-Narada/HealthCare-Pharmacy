@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_menu_group_what">
+        <item android:title="What are you looking for?">
+            <menu>
+        <item
+            android:id="@+id/nav_Search_Buy_Medicine"
+            android:icon="@drawable/places_ic_search"
+            android:title="@string/Search_Buy_Medicine" />
+        <item
+            android:id="@+id/nav_Upload_Prescription"
+            android:icon="@drawable/ic_prescription"
+            android:title="@string/Upload_Prescription" />
+        <item
+            android:id="@+id/nav_Categories"
+            android:icon="@mipmap/ic_categories_foreground"
+            android:title="@string/Categories" />
+            </menu>
+        </item>
+
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_menu_group_manage">
+        <item android:title="Manage">
+            <menu>
+
+        <item
+            android:id="@+id/nav_myOrders"
+            android:title="@string/my_orders" />
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/nav_my_address"
+            android:title="@string/my_address" />
+        <item
+            android:id="@+id/nav_my_Prescription"
+            android:title="@string/my_Prescription" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_group_HealthCare_Pharmacy">
+        <item android:title="HealthCare Pharmacy ">
+            <menu>
+        <item
+            android:id="@+id/nav_refill_Medicine"
+            android:title="@string/refill_Medicine" />
+        <item
+            android:id="@+id/nav_manage_reminder"
+            android:title="@string/manage_reminder" />
+        <item
+            android:id="@+id/nav_my_wallet"
+            android:title="@string/my_wallet" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/nav_group_logout">
+        <item android:title="@string/Logout">
+            <menu>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="@string/Logout" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

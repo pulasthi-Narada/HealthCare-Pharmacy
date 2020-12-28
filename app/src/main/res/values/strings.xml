@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">HealthCare Pharmacy</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_cart">Cart</string>
+    <string name="action_notification">Notifications</string>
+
+    <string name="Search_Buy_Medicine">Search &amp; Buy Medicine</string>
+    <string name="Upload_Prescription">Upload Prescription</string>
+    <string name="my_Prescription">My Prescription</string>
+    <string name="Categories">Categories</string>
+    <string name="my_orders">My Orders</string>
+    <string name="profile">Profile</string>
+    <string name="my_address">My Address</string>
+    <string name="refill_Medicine">Refill Medicine</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="manage_reminder">Manage Reminder</string>
+    <string name="Logout">Logout</string>
+    <string name="title_activity_categories">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="qr_Prescription_scan">Scan QR Prescription</string>
+    <string name="explore">EXPLORE</string>
+    <string name="see_all"><b>SEE ALL ></b></string>
+    <string name="Popular_Products"><b>Popular Products</b></string>
+    <string name="shop_by_category"><b>Shop By Category</b></string>
+</resources>
