@@ -26,4 +26,6 @@
     <string name="see_all"><b>SEE ALL ></b></string>
     <string name="Popular_Products"><b>Popular Products</b></string>
     <string name="shop_by_category"><b>Shop By Category</b></string>
+
+    <string name="Home">Home</string>
 </resources>
