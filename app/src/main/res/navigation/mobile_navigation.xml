@@ -10,6 +10,12 @@
         android:name="com.healthcarepharmacy.ui.home.HomeFragment"
         android:label="@string/Home"
         tools:layout="@layout/fragment_home" />
+    <activity
+        android:id="@+id/nav_Search_Buy_Medicine"
+        android:name="com.healthcarepharmacy.SearchBuyMedicineActivity"
+        android:label="@string/Search_Buy_Medicine"
+        tools:layout="@layout/activity_search_buy_medicine" />
+
 
     <activity
         android:id="@+id/nav_Upload_Prescription"
@@ -22,4 +28,18 @@
         android:name="com.healthcarepharmacy.CategoriesActivity"
         android:label="@string/Categories"
         tools:layout="@layout/activity_categories" />
+    <activity
+        android:id="@+id/nav_my_address"
+        android:name="com.healthcarepharmacy.MyAddressActivity"
+        android:label="@string/my_address"
+        tools:layout="@layout/activity_my_address" />
+    <activity
+        android:id="@+id/nav_my_Prescription"
+        android:name="com.healthcarepharmacy.UploadExistingImageActivity"
+        android:label="@string/my_Prescription"
+        tools:layout="@layout/activity_upload_existing_image" />
+
+
+
+
 </navigation>
