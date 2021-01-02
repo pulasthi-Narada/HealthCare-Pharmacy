@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "595471851730",
+    "project_id": "healthcare-pharmacy-c28f4",
+    "storage_bucket": "healthcare-pharmacy-c28f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595471851730:android:a5a909ed9e9e8e2abf8d0b",
+        "android_client_info": {
+          "package_name": "com.healthcarepharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595471851730-8elvbenbn7fk57tdtop19vfka573nlr8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthcarepharmacy",
+            "certificate_hash": "4f40283fa5b1d53148956f6eafdefd605aa5154b"
+          }
+        },
+        {
+          "client_id": "595471851730-se13va70cv6uo87ro5imcg2d5dppitb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGtI9nYj8Mr9qzW-YnkiPP1YrHMBE6mGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595471851730-se13va70cv6uo87ro5imcg2d5dppitb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
