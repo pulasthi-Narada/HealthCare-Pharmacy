@@ -17,7 +17,7 @@
         android:layout_marginBottom="344dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/marker" />
+        app:srcCompat="@mipmap/ic_marker_foreground" />
 
     <Button
         android:id="@+id/btnadd"
@@ -29,7 +29,7 @@
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
         android:layout_marginBottom="144dp"
-        android:background="@drawable/roundbutton"
+        android:background="@drawable/round_button"
         android:text="Search Your Location"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"

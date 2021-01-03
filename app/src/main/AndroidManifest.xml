@@ -22,8 +22,14 @@
         <activity android:name=".UploadExistingImageActivity"></activity>
         <activity android:name=".SearchBuyMedicineActivity" />
         <activity android:name=".MyAddressActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" >
+
+
+        </activity>
+        <activity android:name=".RegisterActivity" >
+
+
+        </activity>
         <activity
             android:name=".UploadPrescriptionActivity"
             android:screenOrientation="portrait" />
@@ -43,6 +49,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
     </application>
 

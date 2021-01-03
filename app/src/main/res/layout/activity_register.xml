@@ -21,7 +21,7 @@
             android:layout_marginBottom="516dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/register" />
+            app:srcCompat="@mipmap/ic_register_foreground" />
 
         <EditText
             android:id="@+id/txt_name"
@@ -40,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/txt_email"
+            android:id="@+id/Login_txt_email"
             android:layout_width="349dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -89,7 +89,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/txt_pwd"
+            android:id="@+id/Login_txt_pwd"
             android:layout_width="346dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -130,7 +130,7 @@
             android:layout_marginStart="120dp"
             android:layout_marginLeft="120dp"
             android:layout_marginBottom="76dp"
-            android:background="@drawable/roundbutton"
+            android:background="@drawable/round_button"
             android:text="Register"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"

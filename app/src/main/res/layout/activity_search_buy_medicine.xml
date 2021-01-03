@@ -1,123 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".SearchBuyMedicineActivity">
 
-    <ImageButton
-        android:id="@+id/btnback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.017"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <ImageButton
-        android:id="@+id/btncart"
-        android:layout_width="57dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018"
-        app:srcCompat="@drawable/checkout" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/txt_upload"
-        android:layout_width="391dp"
-        android:layout_height="83dp"
-        android:ems="10"
-        android:hint="Search for prescription medicine"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"
-        android:background="@android:drawable/screen_background_light"/>
+        <ImageButton
+            android:id="@+id/Search_btnback"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <ImageButton
-        android:id="@+id/btnsearch"
-        android:layout_width="42dp"
-        android:layout_height="38dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        app:srcCompat="@drawable/search" />
+        <ImageButton
+            android:id="@+id/Search_imgBtnCart"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="4dp"
+            android:src="@mipmap/ic_checkout_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <ImageButton
-        android:id="@+id/btnmic"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginLeft="356dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151"
-        app:srcCompat="@drawable/microphone" />
+        <ImageButton
+            android:id="@+id/Search_btnmic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_microphone_foreground"
+            app:layout_constraintBottom_toBottomOf="@+id/Search_btnSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Search_btnSearch"
+            app:layout_constraintTop_toTopOf="@+id/Search_btnSearch" />
 
-    <ImageButton
-        android:id="@+id/btnup"
-        android:layout_width="403dp"
-        android:layout_height="118dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281"
-        app:srcCompat="@android:drawable/screen_background_light" />
+        <ImageButton
+            android:id="@+id/Search_btnSearch"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:src="@mipmap/ic_search_gray_foreground"
+            app:layout_constraintBottom_toBottomOf="@+id/Search_txt_upload"
+            app:layout_constraintEnd_toStartOf="@+id/Search_btnmic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Search_txt_upload"
+            app:layout_constraintTop_toTopOf="@+id/Search_txt_upload" />
 
-    <Button
-        android:id="@+id/btnupload"
-        android:layout_width="152dp"
-        android:layout_height="42dp"
-        android:background="@drawable/roundbutton"
-        android:text="Upload Here"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        <View
+            android:id="@+id/Search_btnup"
+            android:layout_width="403dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="40dp"
+            android:background="#D3D6D4"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="@+id/Search_btnmic"
+            app:layout_constraintHorizontal_bias="0.555"
+            app:layout_constraintStart_toStartOf="@+id/Search_txt_upload"
+            app:layout_constraintTop_toBottomOf="@+id/Search_txt_upload" />
 
-    <TextView
-        android:id="@+id/txt_1"
-        android:layout_width="158dp"
-        android:layout_height="38dp"
-        android:text="Upload Prescription"
-        android:textColor="@color/ligth_blue"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272" />
+        <EditText
+            android:id="@+id/Search_txt_upload"
+            android:layout_width="286dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:drawable/screen_background_light"
+            android:ems="10"
+            android:hint="Search for prescription medicine"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/Search_btnup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Search_btnSearch"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/txt_2"
-        android:layout_width="168dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginRight="200dp"
-        android:text="Upload Quickly And We Do The Rest!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        <Button
+            android:id="@+id/Search_btnupload"
+            android:layout_width="152dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/round_button"
+            android:text="Upload Here"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Search_txt_1"
+            app:layout_constraintEnd_toEndOf="@+id/Search_btnup"
+            app:layout_constraintHorizontal_bias="0.414"
+            app:layout_constraintStart_toEndOf="@+id/Search_txt_1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/Search_txt_1"
+            android:layout_width="158dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="24dp"
+            android:text="Upload Prescription"
+            android:textColor="@color/ligth_blue"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/Search_btnup" />
+
+        <TextView
+            android:id="@+id/Search_txt_2"
+            android:layout_width="356dp"
+            android:layout_height="68dp"
+
+            android:text="Upload Quickly And We Do The Rest!"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/Search_btnup"
+            app:layout_constraintEnd_toEndOf="@+id/Search_btnup"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="@+id/Search_btnup"
+            app:layout_constraintTop_toBottomOf="@+id/Search_txt_upload"
+            app:layout_constraintVertical_bias="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="47dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="325dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
