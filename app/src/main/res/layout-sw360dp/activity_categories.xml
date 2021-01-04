@@ -62,7 +62,7 @@
             android:layout_columnWeight="1"
             android:layout_width="175dp"
             android:layout_height="133dp"
-            app:srcCompat="@drawable/prescription" />
+            app:srcCompat="@drawable/ca_prescription" />
 
 
     </GridLayout>
