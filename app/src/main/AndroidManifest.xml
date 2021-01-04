@@ -22,11 +22,10 @@
         <activity android:name=".UploadExistingImageActivity"></activity>
         <activity android:name=".SearchBuyMedicineActivity" />
         <activity android:name=".MyAddressActivity" />
-        <activity android:name=".LoginActivity" >
-
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".RegisterActivity" >
+        <activity android:name=".RegisterActivity" android:screenOrientation="portrait">
 
 
         </activity>
@@ -44,6 +43,7 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.HealthCarePharmacy.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
