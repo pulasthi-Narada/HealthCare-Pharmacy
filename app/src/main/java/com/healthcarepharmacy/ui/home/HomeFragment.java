@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.healthcarepharmacy.CategoriesActivity;
 import com.healthcarepharmacy.OffersActivity;
 import com.healthcarepharmacy.R;
+import com.healthcarepharmacy.product_recyclerview_Activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     ImageSlider imgs;
+    ImageButton diabetiImgBtn,householadImgBtn;
     TextView categorySeeAll;
     LinearLayout offersLinearLayout;
 
@@ -37,13 +40,19 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-       // set Home_imgeslider object in imgs object variable
+       // set Home_imgeslider object in imgs  variable
         imgs = root.findViewById(R.id.Home_imgeslider);
 
-        // set Home_Products_see_all_txtView  object in categorySeeAll object variable
+        // set Home_Products_see_all_txtView  object in categorySeeAll  variable
         categorySeeAll = root.findViewById(R.id.Home_Products_see_all_txtView);
 
-        // set Offers_linear_layout  object in offersLinearLayout object variable
+        // set Home_diabetic_care_imgBtn  object in diabetiImgBtn  variable
+        diabetiImgBtn = root.findViewById(R.id.Home_diabetic_care_imgBtn);
+
+        // set Home_householad_imgBtn  object in householadImgBtn  variable
+        householadImgBtn = root.findViewById(R.id.Home_householad_imgBtn);
+
+        // set Offers_linear_layout  object in offersLinearLayout  variable
         offersLinearLayout = root.findViewById(R.id.Offers_linear_layout);
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -56,6 +65,12 @@ public class HomeFragment extends Fragment {
                 // shop by category See All method
                categorySeeAll();
 
+                // go to Diabetic Care category
+               goToDiabeticCare();
+
+                // go to house holad  category
+                goToHouseholad();
+
 
 
 
@@ -64,6 +79,35 @@ public class HomeFragment extends Fragment {
 
 
         return root;
+
+    }
+
+    private void goToHouseholad() {
+        householadImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // start product_recyclerview_Activity Activity
+                Intent intent = new Intent(getActivity(), product_recyclerview_Activity.class);
+
+                // start put Extra  data to Activity
+                intent.putExtra("categorie","household");
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void goToDiabeticCare() {
+        diabetiImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // start product_recyclerview_Activity Activity
+                Intent intent = new Intent(getActivity(), product_recyclerview_Activity.class);
+
+                // start put Extra  data to Activity
+                intent.putExtra("categorie","diabetic");
+                startActivity(intent);
+            }
+        });
 
     }
 

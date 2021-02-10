@@ -1,16 +1,16 @@
 package com.healthcarepharmacy.product;
 
-public class DiabeticCare {
+public class Product {
     private String name;
     private String type;
     private String price;
     private String image;
 
-    public DiabeticCare() {
+    public Product() {
 
     }
 
-    public DiabeticCare(String name, String type, String price, String image) {
+    public Product(String name, String type, String price, String image) {
         this.name = name;
         this.type = type;
         this.price = price;
