@@ -18,17 +18,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthCarePharmacy">
-        <activity android:name=".product_recyclerview_Activity"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity
+            android:name=".product_recyclerview_Activity"
+            android:screenOrientation="portrait" />
         <activity android:name=".UploadExistingImageActivity" />
         <activity android:name=".SearchBuyMedicineActivity" />
         <activity android:name=".MyAddressActivity" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UploadPrescriptionActivity"
             android:screenOrientation="portrait" />

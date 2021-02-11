@@ -13,7 +13,9 @@ import com.healthcarepharmacy.R;
 public class ProductViewHolder  extends RecyclerView.ViewHolder {
     TextView textName,textType,textPrice;
      ImageView imageView,imagCart;
+     View v;
 
+    public View getV() { return v; }
 
     public TextView getTextName() {
         return textName;
@@ -35,11 +37,15 @@ public class ProductViewHolder  extends RecyclerView.ViewHolder {
 
     public ProductViewHolder(@NonNull View itemView) {
         super(itemView);
+
         textName = itemView.findViewById(R.id.Product_layout_name_txtview);
         textType = itemView.findViewById(R.id.Product_layout_type_txtview);
         textPrice = itemView.findViewById(R.id.Product_layout_price_txtview);
         imageView = itemView.findViewById(R.id.Product_layout_imgView);
         imagCart  = itemView.findViewById(R.id.Product_layout_cart);
+
+        //put product recyclerview view in v using itemView
+        v= itemView;
 
     }
 }

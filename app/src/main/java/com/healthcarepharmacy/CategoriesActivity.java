@@ -28,9 +28,9 @@ ImageView diabeticImg,householdImg;
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(CategoriesActivity.this, product_recyclerview_Activity.class);
-                intent.putExtra("categorie","diabetic");
-                startActivity(intent);
+                Intent categorieIntent = new Intent(CategoriesActivity.this, product_recyclerview_Activity.class);
+                categorieIntent.putExtra("categorie","Diabetic_Care");
+                startActivity(categorieIntent);
             }
         });
 
@@ -38,9 +38,9 @@ ImageView diabeticImg,householdImg;
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(CategoriesActivity.this, product_recyclerview_Activity.class);
-                intent.putExtra("categorie","household");
-                startActivity(intent);
+                Intent categorieIntent = new Intent(CategoriesActivity.this, product_recyclerview_Activity.class);
+                categorieIntent.putExtra("categorie","Household_Remedies");
+                startActivity(categorieIntent);
             }
         });
 

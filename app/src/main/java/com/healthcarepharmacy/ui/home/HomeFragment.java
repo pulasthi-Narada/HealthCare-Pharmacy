@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), product_recyclerview_Activity.class);
 
                 // start put Extra  data to Activity
-                intent.putExtra("categorie","household");
+                intent.putExtra("categorie","Household_Remedies");
                 startActivity(intent);
             }
         });
@@ -104,7 +104,7 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), product_recyclerview_Activity.class);
 
                 // start put Extra  data to Activity
-                intent.putExtra("categorie","diabetic");
+                intent.putExtra("categorie","Diabetic_Care");
                 startActivity(intent);
             }
         });

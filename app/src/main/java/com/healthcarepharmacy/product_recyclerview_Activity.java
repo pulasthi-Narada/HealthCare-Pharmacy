@@ -41,13 +41,9 @@ public class product_recyclerview_Activity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        if(intent.getStringExtra("categorie").equals("diabetic")){
-            myRef = FirebaseDatabase.getInstance().getReference().child("product").child("Diabetic_Care");
 
-        } else if(intent.getStringExtra("categorie").equals("household")) {
-            myRef = FirebaseDatabase.getInstance().getReference().child("product").child("Household_Remedies");
+        myRef = FirebaseDatabase.getInstance().getReference().child("product").child(intent.getStringExtra("categorie"));
 
-        }
         options = new  FirebaseRecyclerOptions.Builder<Product>().setQuery(myRef, Product.class).build();
         adapter= new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
             @Override
@@ -58,6 +54,23 @@ public class product_recyclerview_Activity extends AppCompatActivity {
                 holder.getTextPrice().setText("LKR "+model.getPrice());
                 Picasso.get().load(model.getImage()).into(holder.getImageView());
                 holder.getImagCart().setImageResource(R.mipmap.ic_pro_cart_foreground);
+
+                // set On Click Listener to  product recyclerview
+                holder.getV().setOnClickListener(new View.OnClickListener() {
+                    //if  product recyclerview item click onClick() method work
+                    @Override
+                    public void onClick(View v) {
+                        // start ProductDetailsActivity Activity
+                        Intent intentt = new Intent(product_recyclerview_Activity.this, ProductDetailsActivity.class);
+                        // pass product key to ProductDetailsActivity (pass selected  Product item to ProductDetailsActivity)
+                        intentt.putExtra("productkey",getRef(position).getKey());
+
+                        // pass selected product type to ProductDetailsActivity (pass selected  Product type to ProductDetailsActivity)
+
+                        intentt.putExtra("cate",intent.getStringExtra("categorie"));
+                        startActivity(intentt);
+                    }
+                });
 
             }
 
