@@ -1,20 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".UploadPrescriptionActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/UploadPrescription_textView"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:text="@string/Upload_Prescription"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_upload"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:backgroundTint="@color/ligth_blue"
+                android:layout_alignParentTop="true"
+                android:text="Upload Prescription"
+                android:textColor="@android:color/background_light"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:textStyle="normal"
+                android:background="@color/ligth_blue"/>
+
+
+            <Button
+                android:id="@+id/Upload_prescription_layout_UploadBtn"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+               android:layout_below="@+id/Upload_prescription_layout_imagsample"
+                android:background="@drawable/round_button"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="40dp"
+                android:text="Next"
+                android:textColor="@android:color/background_light" />
+
+
+            <ImageButton
+                android:id="@+id/Upload_prescription_layout_imgCameraBtn"
+                android:src="@mipmap/ic_camera_new_foreground"
+                android:layout_width="88dp"
+                android:layout_height="78dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="#CD2222"
+                android:layout_marginTop="65dp"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_below="@+id/Upload_prescription_layout_txt_upload" />
+
+            <ImageButton
+                android:id="@+id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_width="88dp"
+                android:layout_height="78dp"
+
+                android:background="@drawable/round_button"
+                android:backgroundTint="#E81BC81B"
+                android:src="@mipmap/ic_gallery_foreground"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="65dp"
+                android:layout_below="@+id/Upload_prescription_layout_txt_upload" />
+
+            <ImageButton
+                android:id="@+id/Upload_prescription_layout_pastBtn"
+                android:layout_width="88dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="65dp"
+                android:layout_marginLeft="40dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="#E81BC81B"
+                android:layout_toRightOf="@+id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_below="@id/Upload_prescription_layout_txt_upload"
+                app:srcCompat="@mipmap/ic_pastrx_foreground" />
+
+
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_cam"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+
+                android:layout_alignStart="@+id/Upload_prescription_layout_imgCameraBtn"
+                android:layout_alignEnd="@+id/Upload_prescription_layout_imgCameraBtn"
+                android:layout_alignBottom="@+id/Upload_prescription_layout_imgCameraBtn"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="-30dp"
+                android:text="Camera"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_alignStart="@+id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_alignEnd="@+id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_alignBottom="@+id/Upload_prescription_layout_imgGalleryBtn"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="-31dp"
+                android:text="Gallery"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_pastrx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignStart="@+id/Upload_prescription_layout_pastBtn"
+                android:layout_alignEnd="@+id/Upload_prescription_layout_pastBtn"
+                android:layout_alignBottom="@+id/Upload_prescription_layout_pastBtn"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="-28dp"
+                android:text="Past Rx"
+                android:textSize="18sp" />
+
+
+
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_guide1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@+id/Upload_prescription_layout_txt_gallery"
+                android:background="@android:drawable/screen_background_light"
+                android:text="PRESCRIPTION GUIDE"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_guide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/Upload_prescription_layout_txt_guide1"
+                android:background="@android:drawable/screen_background_light"
+                android:text="* Upload clearprescriotion Images."
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_guide3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/Upload_prescription_layout_txt_guide2"
+                android:background="@android:drawable/screen_background_light"
+                android:text="* Below mentioned points should be part of valid prescription."
+                android:textSize="12sp" />
+
+
+            <ImageView
+                android:id="@+id/Upload_prescription_layout_imagsample"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/Upload_prescription_layout_txt_guide3"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

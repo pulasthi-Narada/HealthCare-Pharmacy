@@ -33,7 +33,7 @@
                 android:layout_margin="2dp"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold"
+                android:textStyle="bold|italic"
                 android:text="TextView" />
 
             <ImageView
@@ -107,7 +107,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/ProductDetails_layout_cardview1"
         android:layout_marginRight="10dp"
         app:cardElevation="20dp"
