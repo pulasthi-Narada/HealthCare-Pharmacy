@@ -41,72 +41,58 @@
                 android:background="@color/ligth_blue"/>
 
 
-
-
-
-            <ImageButton
-                android:id="@+id/Upload_prescription_layout_imgCameraBtn"
-                android:src="@mipmap/ic_camera_new_foreground"
-                android:layout_width="68dp"
-                android:layout_height="70dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="#D6E1EA"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="40dp"
-                android:layout_toLeftOf="@id/Upload_prescription_layout_imgGalleryBtn"
-                android:layout_below="@+id/Upload_prescription_layout_txt_upload" />
-
             <ImageButton
                 android:id="@+id/Upload_prescription_layout_imgGalleryBtn"
                 android:layout_width="68dp"
                 android:layout_height="70dp"
-
+               android:layout_marginLeft="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/Upload_prescription_layout_txt_upload"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="#D6E1EA"
-                android:src="@mipmap/ic_gallery_foreground"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:layout_below="@+id/Upload_prescription_layout_txt_upload" />
+                android:src="@mipmap/ic_gallery_foreground" />
 
             <ImageButton
                 android:id="@+id/Upload_prescription_layout_pastBtn"
                 android:layout_width="68dp"
                 android:layout_height="70dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="40dp"
+                android:layout_below="@id/Upload_prescription_layout_txt_upload"
+               android:layout_marginRight="50dp"
+                android:layout_marginTop="33dp"
+               android:layout_alignParentRight="true"
                 android:background="@drawable/round_button"
                 android:backgroundTint="#D6E1EA"
-                android:layout_toRightOf="@+id/Upload_prescription_layout_imgGalleryBtn"
-                android:layout_below="@id/Upload_prescription_layout_txt_upload"
                 app:srcCompat="@mipmap/ic_pastrx_foreground" />
 
 
-            <TextView
-                android:id="@+id/Upload_prescription_layout_txt_cam"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="40dp"
-                android:layout_toLeftOf="@id/Upload_prescription_layout_imgGalleryBtn"
-                android:layout_below="@+id/Upload_prescription_layout_imgCameraBtn"
-                android:text="Camera"
-                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/Upload_prescription_layout_txt_gallery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
                 android:layout_below="@+id/Upload_prescription_layout_imgGalleryBtn"
-                android:text="Gallery"
+                android:text="Prescription"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/Upload_prescription_layout_txt_gallery2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Upload_prescription_layout_txt_gallery"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="60dp"
+                android:text="Upload"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/Upload_prescription_layout_txt_pastrx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_toRightOf="@+id/Upload_prescription_layout_imgGalleryBtn"
+              android:layout_alignParentRight="true"
                 android:layout_below="@id/Upload_prescription_layout_pastBtn"
+                android:layout_marginRight="50dp"
                 android:text="Past Rx"
                 android:textSize="18sp" />
 
@@ -118,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="8dp"
-                android:layout_below="@+id/Upload_prescription_layout_txt_gallery"
+                android:layout_below="@+id/Upload_prescription_layout_txt_gallery2"
                 android:background="@android:drawable/screen_background_light"
                 android:text="PRESCRIPTION GUIDE"
                 android:layout_alignParentLeft="true"

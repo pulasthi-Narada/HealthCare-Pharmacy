@@ -47,6 +47,8 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
     implementation 'com.firebaseui:firebase-ui-database:7.1.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.firebase:firebase-ml-vision:15.0.0'
+    implementation 'com.google.firebase:firebase-core:15.0.2'
 
 
 }
