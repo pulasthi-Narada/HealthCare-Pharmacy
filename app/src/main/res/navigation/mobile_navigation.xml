@@ -39,6 +39,12 @@
         android:label="@string/my_Prescription"
         tools:layout="@layout/activity_upload_existing_image" />
 
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.healthcarepharmacy.logoutActivity"
+        android:label="@string/my_Prescription"
+        tools:layout="@layout/activity_logout" />
+
 
 
 

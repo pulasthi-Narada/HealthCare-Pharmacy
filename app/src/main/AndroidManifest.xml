@@ -5,11 +5,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-feature android:name="android.hardware.camera"  android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -18,8 +19,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthCarePharmacy">
-        <activity android:name=".ProductDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".logoutActivity"></activity>
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".product_recyclerview_Activity"
             android:screenOrientation="portrait" />
@@ -28,10 +31,16 @@
         <activity android:name=".MyAddressActivity" />
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".RegisterActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".UploadPrescriptionActivity"
             android:screenOrientation="portrait" />
@@ -48,11 +57,7 @@
             android:theme="@style/Theme.HealthCarePharmacy.NoActionBar">
 
             <!-- To use multiple models: android:value="ocr,model2,model3" -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

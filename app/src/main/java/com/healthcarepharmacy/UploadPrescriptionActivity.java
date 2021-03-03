@@ -24,6 +24,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -54,7 +55,7 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    //    FirebaseApp.initializeApp(this);
+      //  FirebaseApp.initializeApp(this);
 
         setContentView(R.layout.activity_upload_prescription);
 

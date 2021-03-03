@@ -1,6 +1,7 @@
 package com.healthcarepharmacy;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -46,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
        // get id of whatsapp Floating Action Button
         FloatingActionButton fab = findViewById(R.id.Whatapp_floatingBtn);
        //  whatsapp Floating Action Button  OnClickListener. when button is press this method will run.
+
+        SharedPreferences sharedPreff = getSharedPreferences("login", MODE_PRIVATE);
+        int loginCode = sharedPreff.getInt("value",0);
+
+
+        if(loginCode==0) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_Upload_Prescription,R.id.nav_Categories,R.id.nav_Search_Buy_Medicine,R.id.nav_my_address,R.id.nav_my_Prescription)
+                R.id.nav_home, R.id.nav_Upload_Prescription,R.id.nav_Categories,R.id.nav_Search_Buy_Medicine,R.id.nav_my_address,R.id.nav_my_Prescription,R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -81,14 +93,18 @@ public class MainActivity extends AppCompatActivity {
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
 
                // get selected id from navigation menu item
-//                int id= destination.getId();
-//
-//                switch (id){
-//                    // if user select navigation Categories in menu then start  Categories Activity
-//                    case R.id.nav_Categories:
-//                        // start  Categories Activity
-//                        break;
-//                }
+                int id= destination.getId();
+
+
+                switch (id){
+                    // if user select navigation Categories in menu then start  Categories Activity
+                    case R.id.nav_logout:
+
+                        Intent intent = new Intent(MainActivity.this, logoutActivity.class);
+                           startActivity(intent);
+                           finish();
+                        break;
+                }
 
             }
         });
@@ -140,4 +156,34 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        SharedPreferences sharedPreff = getSharedPreferences("login", MODE_PRIVATE);
+        int loginCode = sharedPreff.getInt("value",0);
+
+
+        if(loginCode==0) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sharedPreff = getSharedPreferences("login", MODE_PRIVATE);
+        int loginCode = sharedPreff.getInt("value",0);
+
+
+        if(loginCode==0) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 }

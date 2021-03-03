@@ -7,152 +7,106 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/Register_activity_imageView"
             android:layout_width="238dp"
             android:layout_height="214dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="156dp"
-            android:layout_marginLeft="156dp"
-            android:layout_marginBottom="516dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_toEndOf="@id/Register_activity_txt_1"
             app:srcCompat="@mipmap/ic_register_foreground" />
 
         <EditText
-            android:id="@+id/txt_name"
+            android:id="@+id/Register_activity_txt_name"
             android:layout_width="349dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="432dp"
+            android:layout_below="@+id/Register_activity_imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:ems="10"
             android:hint="Name"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/Login_txt_email"
+            android:id="@+id/Register_activity_Login_txt_email"
             android:layout_width="349dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="364dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/Register_activity_txt_name"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:inputType="textEmailAddress"/>
 
         <com.hbb20.CountryCodePicker
-            android:id="@+id/cpp"
-            android:layout_width="100dp"
-            android:layout_height="53dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:gravity="center"
+            android:id="@+id/Register_activity_cpp"
+            android:layout_below="@+id/Register_activity_Login_txt_email"
+            android:layout_marginTop="20dp"
+           android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:visibility="visible"
+            app:ccp_clickable="true"
             app:ccp_autoDetectCountry="true"
-            app:ccp_showNameCode="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.556" />
+            app:ccp_showNameCode="true" />
 
         <EditText
-            android:id="@+id/txt_phone"
+            android:id="@+id/Register_activity_txt_phone"
             android:layout_width="232dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="156dp"
-            android:layout_marginLeft="156dp"
-            android:layout_marginBottom="300dp"
+           android:layout_below="@+id/Register_activity_Login_txt_email"
+            android:layout_toEndOf="@id/Register_activity_cpp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Mobile Number"
-            android:inputType="phone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:inputType="phone" />
 
         <EditText
-            android:id="@+id/Login_txt_pwd"
+            android:id="@+id/Register_activity_Login_txt_pwd"
             android:layout_width="346dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="232dp"
+            android:layout_below="@id/Register_activity_cpp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/txt_pwdhint"
+            android:id="@+id/Register_activity_txt_pwdhint"
             android:layout_width="339dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="48dp"
-            android:layout_marginLeft="48dp"
-            android:layout_marginBottom="160dp"
+           android:layout_below="@id/Register_activity_Login_txt_pwd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+
             android:ems="10"
             android:hint="Confirm Password"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/btnreg"
-            android:layout_width="204dp"
+            android:id="@+id/Register_activity_btnreg"
+            android:layout_width="304dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="120dp"
-            android:layout_marginLeft="120dp"
-            android:layout_marginBottom="76dp"
+           android:layout_marginTop="50dp"
+            android:layout_below="@+id/Register_activity_txt_pwdhint"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+
             android:background="@drawable/round_button"
             android:text="Register"
-            android:textColor="@android:color/background_light"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="@android:color/background_light" />
 
         <TextView
-            android:id="@+id/txt_1"
-            android:layout_width="123dp"
-            android:layout_height="155dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="272dp"
-            android:layout_marginRight="272dp"
-            android:layout_marginBottom="560dp"
+            android:id="@+id/Register_activity_txt_1"
+            android:layout_width="152dp"
+            android:layout_height="157dp"
+            android:layout_alignParentLeft="true"
             android:text="Here's Your First Step With Us"
             android:textColor="@color/test"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:textSize="24sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </ScrollView>

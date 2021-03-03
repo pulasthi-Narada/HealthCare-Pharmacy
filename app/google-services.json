@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "595471851730",
+    "firebase_url": "https://healthcare-pharmacy-c28f4-default-rtdb.firebaseio.com",
     "project_id": "healthcare-pharmacy-c28f4",
     "storage_bucket": "healthcare-pharmacy-c28f4.appspot.com"
   },
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "com.healthcarepharmacy",
             "certificate_hash": "4f40283fa5b1d53148956f6eafdefd605aa5154b"
+          }
+        },
+        {
+          "client_id": "595471851730-lt05vrkepmgl7vol5intglpefr8srn96.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthcarepharmacy",
+            "certificate_hash": "6a575f073dadfc7ea086fba69a83ada7e7e99a7c"
           }
         },
         {

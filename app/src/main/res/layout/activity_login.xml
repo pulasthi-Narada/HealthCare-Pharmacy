@@ -42,18 +42,40 @@
             app:layout_constraintHorizontal_weight="65"
             app:layout_constraintStart_toEndOf="@+id/Login_txt_1" />
 
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/Login_activity_cpp"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="8dp"
+            android:visibility="visible"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_clickable="true"
+
+            app:ccp_showNameCode="true"
+            app:layout_constraintBottom_toBottomOf="@+id/Login_txt_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/Login_txt_email"
+            app:layout_constraintVertical_bias="1.0" />
+
         <EditText
             android:id="@+id/Login_txt_email"
-            android:layout_width="0dp"
+            android:inputType="phone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+
             android:ems="10"
-            android:hint="Email/Mobile No."
-            android:inputType="textPersonName"
+            android:hint="Mobile No."
+
             app:layout_constraintBottom_toTopOf="@+id/Login_txt_pwd"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintStart_toEndOf="@+id/Login_activity_cpp"
             app:layout_constraintTop_toBottomOf="@+id/Login_imgView"
             app:layout_constraintVertical_chainStyle="spread" />
 
@@ -109,6 +131,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="233dp" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
