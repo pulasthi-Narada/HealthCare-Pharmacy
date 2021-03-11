@@ -1,96 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MyAddressActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="158dp"
-        android:layout_height="207dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="140dp"
-        android:layout_marginBottom="344dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_marker_foreground" />
+        <ImageView
+            android:id="@+id/address_img"
+            android:layout_width="284dp"
+            android:layout_height="221dp"
+            android:layout_below="@+id/txt_add"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@mipmap/ic_address_pick_foreground" />
 
-    <Button
-        android:id="@+id/btnadd"
-        android:layout_width="199dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginBottom="144dp"
-        android:background="@drawable/round_button"
-        android:text="Search Your Location"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/address_btnadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="110dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_button"
+            android:text="Search Your Location"
+            android:textColor="@android:color/background_light" />
 
-    <TextView
+        <TextView
         android:id="@+id/txt_add"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/ligth_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+            android:text="Manage Address"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:background="@color/ligth_blue" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="77dp"
-        android:layout_height="54dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="676dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
 
-    <TextView
-        android:id="@+id/txt_2"
-        android:layout_width="212dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="136dp"
-        android:layout_marginBottom="676dp"
-        android:text="Manage Address"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <TextView
         android:id="@+id/txt_save"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginBottom="264dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+         android:layout_below="@+id/address_img"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
         android:text="Save your Address Now"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/ligth_blue"
+        android:textSize="27sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</ScrollView>

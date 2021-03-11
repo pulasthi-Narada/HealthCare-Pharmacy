@@ -1,5 +1,7 @@
 package com.healthcarepharmacy;
 
+import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.TargetApi;
@@ -12,24 +14,37 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.MediaStore;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.ml.vision.FirebaseVision;
+import com.google.firebase.ml.vision.common.FirebaseVisionImage;
+import com.google.firebase.ml.vision.text.FirebaseVisionText;
+import com.google.firebase.ml.vision.text.FirebaseVisionTextDetector;
 import com.squareup.picasso.Picasso;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import java.util.List;
 
 import static android.Manifest.permission.CAMERA;
@@ -55,7 +70,7 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      //  FirebaseApp.initializeApp(this);
+        FirebaseApp.initializeApp(this);
 
         setContentView(R.layout.activity_upload_prescription);
 
@@ -105,10 +120,18 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
               //  Toast.makeText(UploadPrescriptionActivity.this,"button",Toast.LENGTH_SHORT);
+
+                if (myBitmap != null) {
+                    runTextRecognition();
+                } else {
+                    showToast("Choose a proper image");
+                }
             }
         });
 
     }
+
+
 
 
     private static Bitmap rotateImageIfRequired(Bitmap img, Uri selectedImage) throws IOException {
@@ -353,6 +376,55 @@ public class UploadPrescriptionActivity extends AppCompatActivity {
     }
 
 
+
+
+    private void runTextRecognition() {
+        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(myBitmap);
+        FirebaseVisionTextDetector detector = FirebaseVision.getInstance()
+                .getVisionTextDetector();
+     //   mButton.setEnabled(false);
+        detector.detectInImage(image)
+                .addOnSuccessListener(
+                        new OnSuccessListener<FirebaseVisionText>() {
+                            @Override
+                            public void onSuccess(FirebaseVisionText texts) {
+                             //   mButton.setEnabled(true);
+                                processTextRecognitionResult(texts);
+
+                            }
+                        })
+                .addOnFailureListener(
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Task failed with an exception
+                              //  mButton.setEnabled(true);
+                                e.printStackTrace();
+                            }
+                        });
+    }
+
+
+    private void processTextRecognitionResult(FirebaseVisionText texts) {
+
+        StringBuilder t = new StringBuilder();
+
+        List<FirebaseVisionText.Block> blocks = texts.getBlocks();
+        if (blocks.size() == 0) {
+            showToast("No text found");
+            return;
+        }
+
+        for (int i = 0; i < blocks.size(); i++) {
+            t.append(" ").append(blocks.get(i).getText());
+        }
+
+        showToast(t.toString());
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
 
 
 }

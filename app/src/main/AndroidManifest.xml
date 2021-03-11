@@ -19,7 +19,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthCarePharmacy">
-        <activity android:name=".logoutActivity"></activity>
+        <activity android:name=".AddressDetailsActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api" />
+
+        <activity
+            android:name=".AddressMapActivity"
+            android:label="@string/title_activity_address_map"
+            android:theme="@style/Theme.HealthCarePharmacy.NoActionBar" />
+        <activity android:name=".AddressPermissionActivity" />
+
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity android:name=".logoutActivity" />
         <activity
             android:name=".ProductDetailsActivity"
             android:screenOrientation="portrait" />
@@ -40,7 +56,7 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UploadPrescriptionActivity"
             android:screenOrientation="portrait" />
