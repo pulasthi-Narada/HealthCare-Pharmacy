@@ -25,6 +25,7 @@ public class MyAddressActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MyAddressActivity.this, AddressDetailsActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });

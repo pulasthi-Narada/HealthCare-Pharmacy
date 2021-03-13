@@ -3,6 +3,7 @@ package com.healthcarepharmacy;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 
@@ -37,6 +38,11 @@ import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRe
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.mancj.materialsearchbar.adapter.SuggestionsAdapter;
 import com.skyfishjy.library.RippleBackground;
@@ -126,7 +132,7 @@ public class AddressMapActivity extends AppCompatActivity implements OnMapReadyC
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 FindAutocompletePredictionsRequest predictionsRequest = FindAutocompletePredictionsRequest.builder()
-
+                        .setCountry("lk")
                         .setTypeFilter(TypeFilter.ADDRESS)
                         .setSessionToken(token)
                         .setQuery(s.toString())
@@ -217,12 +223,25 @@ public class AddressMapActivity extends AppCompatActivity implements OnMapReadyC
             @Override
             public void onClick(View v) {
                 LatLng currentMarkerLocation = mMap.getCameraPosition().target;
+
+                SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
+                String number = sharedPref.getString("number","0");
+
+                DatabaseReference setAddress = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(number).child("Address").child(getIntent().getStringExtra("addressPushKey1"));
+
+
+
+               setAddress.child("latitude").setValue(currentMarkerLocation.latitude);
+               setAddress.child("longitude").setValue(currentMarkerLocation.longitude);
+
+
                 rippleBg.startRippleAnimation();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         rippleBg.stopRippleAnimation();
                         startActivity(new Intent(AddressMapActivity.this, MyAddressActivity.class));
+                        finish();
 
                     }
                 }, 3000);

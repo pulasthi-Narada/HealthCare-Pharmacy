@@ -27,7 +27,7 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity {
         TextView reg;
          EditText phoneNumber,password;
-        Button login;
+        Button login_btn;
         CountryCodePicker ccp;
 
          String phoneNumberWithCountryCode;
@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         reg =findViewById(R.id.Login_txt_register);
-        login =findViewById(R.id.Login_btnlogin);
+        login_btn =findViewById(R.id.Login_btnlogin);
         phoneNumber =findViewById(R.id.Login_txt_email);
         password =findViewById(R.id.Login_txt_pwd);
         ccp =findViewById(R.id.Login_activity_cpp);
@@ -45,7 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
         int loginCode = sharedPref.getInt("value",0);
 
+
         if(loginCode==1){
+
+
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
@@ -55,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        login.setOnClickListener(new View.OnClickListener() {
+        login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -114,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void Login() {
 
+
         DatabaseReference customer_login = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers");//This is the database reference
 
 
@@ -125,13 +129,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
                     if (Objects.equals(dataSnapshot.child(phoneNumberWithCountryCode).child("password").getValue(), passwordHashing(password.getText().toString()))){//Checks if the password matches the phone number
-                        Toast.makeText(LoginActivity.this, "Login successfully", Toast.LENGTH_SHORT).show();//Shows a message
+                        Toast.makeText(LoginActivity.this, "Login  successfully", Toast.LENGTH_SHORT).show();//Shows a message
 
 
                             rememberMe();
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);//After the login process is completed it starts the map activity.
-                        startActivity(intent);
+
+
+                        Intent LoginActivityintent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(LoginActivityintent);
                         finish();
 
                     }else {
@@ -158,6 +164,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("value", 1);
+        editor.putString("number", phoneNumberWithCountryCode);
         editor.apply();
     }
 

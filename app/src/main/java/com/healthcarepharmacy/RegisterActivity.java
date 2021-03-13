@@ -199,6 +199,7 @@ public class RegisterActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("value", 1);
+        editor.putString("number", phoneNumberWithCountryCode);
         editor.apply();
     }
 

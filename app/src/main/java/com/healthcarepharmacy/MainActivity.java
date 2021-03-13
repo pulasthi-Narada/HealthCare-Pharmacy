@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
                 switch (id){
                     // if user select navigation Categories in menu then start  Categories Activity
                     case R.id.nav_logout:
-
                         Intent intent = new Intent(MainActivity.this, logoutActivity.class);
                            startActivity(intent);
                            finish();

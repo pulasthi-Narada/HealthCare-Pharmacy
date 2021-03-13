@@ -30,7 +30,10 @@ public class AddressPermissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_address_permission);
 
         if(ContextCompat.checkSelfPermission(AddressPermissionActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            startActivity(new Intent(AddressPermissionActivity.this, AddressMapActivity.class));
+
+            Intent addressPermissionActivityIntent = new Intent(AddressPermissionActivity.this, AddressMapActivity.class);
+            addressPermissionActivityIntent.putExtra("addressPushKey1", getIntent().getStringExtra("addressPushKey"));
+            startActivity(addressPermissionActivityIntent);
             finish();
             return;
         }
@@ -45,7 +48,9 @@ public class AddressPermissionActivity extends AppCompatActivity {
                         .withListener(new PermissionListener() {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse response) {
-                                startActivity(new Intent(AddressPermissionActivity.this, AddressMapActivity.class));
+                                Intent intent = new Intent(AddressPermissionActivity.this, AddressMapActivity.class);
+                                intent.putExtra("addressPushKey1", getIntent().getStringExtra("addressPushKey"));
+                                startActivity(intent);
                                 finish();
                             }
 

@@ -115,21 +115,13 @@
             android:inputType="textPersonName"
             android:hint="Province" />
 
-        <CheckBox
-            android:id="@+id/AddressDetailsActivity_checkBox"
-            android:layout_below="@id/AddressDetailsActivity_editTxt_province"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/ligth_blue"
-            android:text="Make this as my default address" />
+
 
         <Button
             android:id="@+id/AddressDetailsActivity_btn"
             android:layout_width="match_parent"
-            android:layout_below="@id/AddressDetailsActivity_checkBox"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/AddressDetailsActivity_editTxt_province"
+            android:layout_marginTop="100dp"
             android:layout_height="wrap_content"
             android:text="Next" />
 
