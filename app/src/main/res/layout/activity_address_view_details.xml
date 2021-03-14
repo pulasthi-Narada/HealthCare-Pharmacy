@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".address.AddressViewDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/AddressViewDetailsActivity_textView4"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="50dp"
+            android:background="@color/ligth_blue"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textAlignment="center"
+            android:text="Address Details" />
+
+
+        <EditText
+            android:id="@+id/AddressViewDetailsActivity_editTxt_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/AddressViewDetailsActivity_textView4"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/ligth_blue" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/AddressViewDetailsActivity_cpp"
+            android:layout_below="@id/AddressViewDetailsActivity_editTxt_Name"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_clickable="true"
+            app:ccp_showNameCode="true" />
+
+        <EditText
+            android:id="@+id/AddressViewDetailsActivity_editTxt_Phone"
+            android:layout_below="@+id/AddressViewDetailsActivity_editTxt_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/AddressViewDetailsActivity_cpp"
+            android:layout_marginRight="10dp"
+            android:textColorHint="@color/ligth_blue"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Mobile Number"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/AddressViewDetailsActivity_editTxt_Email"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/AddressViewDetailsActivity_editTxt_Phone"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/ligth_blue"
+            android:ems="10"
+            android:hint="Email"
+            android:layout_marginTop="20dp"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/AddressViewDetailsActivity_editTxt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColorHint="@color/ligth_blue"
+            android:layout_below="@+id/AddressViewDetailsActivity_editTxt_Email"
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:inputType="textPersonName"
+            android:hint="Address" />
+
+
+        <EditText
+            android:id="@+id/AddressViewDetailsActivity_editTxt_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/AddressViewDetailsActivity_editTxt_address"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="City"
+            android:textColorHint="@color/ligth_blue"
+            />
+
+        <EditText
+            android:id="@+id/AddressViewDetailsActivity_editTxt_province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/ligth_blue"
+            android:layout_below="@+id/AddressViewDetailsActivity_editTxt_city"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Province" />
+
+
+
+        <Button
+            android:id="@+id/AddressViewDetailsActivity_btn"
+            android:layout_width="match_parent"
+            android:layout_below="@id/AddressViewDetailsActivity_editTxt_province"
+            android:layout_marginTop="100dp"
+            android:layout_height="wrap_content"
+            android:text="change Location" />
+
+        <Button
+            android:id="@+id/AddressViewDetailsActivity_up_btn"
+            android:layout_width="match_parent"
+            android:layout_below="@id/AddressViewDetailsActivity_btn"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:text="Update Details" />
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

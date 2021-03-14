@@ -1,12 +1,24 @@
 package com.healthcarepharmacy;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.healthcarepharmacy.address.AddressViewActivity;
 
 public class MyAddressActivity extends AppCompatActivity {
     Button btn;
@@ -15,7 +27,33 @@ public class MyAddressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_address);
 
+        SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
+        String loginNumber = sharedPref.getString("number","0");
 
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(loginNumber).child("Address");
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // get total available quest
+                        int addressCount = (int) dataSnapshot.getChildrenCount();
+
+                        if(!(addressCount==0)){
+
+                            Intent intent = new Intent(MyAddressActivity.this, AddressViewActivity .class);
+                            startActivity(intent);
+                            finish();
+
+                        }
+
+
+
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
 
         btn = findViewById(R.id.address_btnadd);
