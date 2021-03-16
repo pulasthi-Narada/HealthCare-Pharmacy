@@ -5,19 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.healthcarepharmacy.AddressDetailsActivity;
+import com.healthcarepharmacy.LoginActivity;
 import com.healthcarepharmacy.MyAddressActivity;
 import com.healthcarepharmacy.ProductDetailsActivity;
 import com.healthcarepharmacy.R;
@@ -29,10 +35,12 @@ import com.squareup.picasso.Picasso;
 public class AddressViewActivity extends AppCompatActivity {
     FirebaseRecyclerOptions<Address> options;
     FirebaseRecyclerAdapter<Address, AddressViewHolder> adapter;
+
     RecyclerView recyclerView;
 
     DatabaseReference myRef;
     TextView addNew;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,12 @@ public class AddressViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
 
         addNew = findViewById(R.id.all_address_layout_textView_add);
+
+
+
+//
+
+
 
         addNew.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +83,49 @@ public class AddressViewActivity extends AppCompatActivity {
                holder.getProvince().setText(model.getProvince());
                holder.getNumber().setText(model.getNumber());
                holder.getMail().setText(model.getMail());
+
+
+               holder.getV().setOnLongClickListener(new View.OnLongClickListener() {
+                   @Override
+                   public boolean onLongClick(View view) {
+
+                       dialog = new Dialog(AddressViewActivity.this);
+                       dialog.setContentView(R.layout.adddress_dilog_box);
+                      // dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.daillog_background));
+                       dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                       dialog.setCancelable(true);
+                       dialog.show();
+
+                       TextView edit = dialog.findViewById(R.id.address_dilog_box_edit_txt);
+                       TextView remove = dialog.findViewById(R.id.address_dilog_box_remove_txt);
+
+                       edit.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View view) {
+                               Toast.makeText(AddressViewActivity.this, "ok", Toast.LENGTH_SHORT).show();//Shows a message
+                               dialog.dismiss();
+
+                           }
+                       });
+
+                       remove.setOnClickListener(new View.OnClickListener() {
+                           @Override
+                           public void onClick(View view) {
+                               Toast.makeText(AddressViewActivity.this, "no", Toast.LENGTH_SHORT).show();
+                               dialog.dismiss();
+                           }
+                       });
+
+
+
+
+                       return true;
+                   }
+               });
+
+
+
+
 
                 // set On Click Listener to  product recyclerview
 //                holder.getV().setOnClickListener(new View.OnClickListener() {

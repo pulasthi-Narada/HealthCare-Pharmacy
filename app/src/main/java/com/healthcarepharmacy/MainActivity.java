@@ -138,14 +138,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int itemId= item.getItemId();
-//        if(itemId == R.id.navigation_item_Categories){
-//            // start  Categories Activity
-//           Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
-//           startActivity(intent);
+        int itemId= item.getItemId();
 
 
-       // }
+
+           if(itemId == R.id.action_cart){
+           Intent intent = new Intent(MainActivity.this, CartActivity.class);
+           startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

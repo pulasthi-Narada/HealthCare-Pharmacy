@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".CartActivity">
+
+
+    <TextView
+        android:id="@+id/CartActivity_textView4"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="50dp"
+        android:background="@color/ligth_blue"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:text="Product Cart" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CartActivity_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CartActivity_textView4"
+        android:background="#B7FFFFFF"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/CartActivity_mrptxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:text="MRP"/>
+            <TextView
+                android:id="@+id/CartActivity_mrp_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:textSize="20sp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/black"
+                android:text="m"/>
+            <View
+                android:id="@+id/CartActivity_layout_line"
+                android:layout_below="@+id/CartActivity_mrp_value"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="2dp"
+                android:background="@color/ligth_blue"/>
+            <TextView
+                android:id="@+id/CartActivity_total_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CartActivity_mrp_value"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Total Payable"/>
+
+            <TextView
+                android:id="@+id/CartActivity_total_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/CartActivity_mrp_value"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:textSize="20sp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="m"/>
+
+            <Button
+                android:id="@+id/CartActivity_place_order_btn"
+                android:layout_below="@+id/CartActivity_total_value"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:textSize="15sp"
+                android:text="place order ->"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CartActivity_layout_recyclerview"
+        android:layout_below="@+id/CartActivity_cardview"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:scrollbars="vertical"/>
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

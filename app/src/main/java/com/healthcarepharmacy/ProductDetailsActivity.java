@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +25,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
     ImageView imag;
     DatabaseReference ref;
     ImageButton addImgBtn,removeImagBtn;
+    Button addCart;
     int quantity=1;
+    String productKey;
+
 
 
     @Override
@@ -37,6 +42,16 @@ public class ProductDetailsActivity extends AppCompatActivity {
         addImgBtn = findViewById(R.id.ProductDetails_layout_add_imgBtn);
         removeImagBtn = findViewById(R.id.ProductDetails_layout_productRemove_imgBtn);
         countText = findViewById(R.id.ProductDetails_layout_productCount_txtview);
+
+        addCart = findViewById(R.id.ProductDetails_layout_addCart_imgBtn);
+
+
+        addCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addToCart();
+            }
+        });
 
         // add quantity
         addImgBtn.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +78,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
 
         // get product Key from  from intent (get selected product key from ProductDetailsActivity).
-        String productKey = getIntent().getStringExtra("productkey");
+         productKey =  getIntent().getStringExtra("productkey");
         // get Selected product type from  intent (get selected product type from ProductDetailsActivity).
         String productType = getIntent().getStringExtra("cate");
 //        Toast.makeText(getApplicationContext(),getIntent().getStringExtra("cate"),Toast.LENGTH_SHORT).show();
@@ -84,6 +99,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     typeText.setText(snapshot.child("type").getValue().toString());
                     // load image url using  Picasso library
                     Picasso.get().load(snapshot.child("image").getValue().toString()).into(imag);
+
                 }else {
                     Toast.makeText(getApplicationContext(),"No Details About this Product",Toast.LENGTH_SHORT).show();
 
@@ -99,6 +115,67 @@ public class ProductDetailsActivity extends AppCompatActivity {
         });
 
 
+
+
+
+    }
+
+    private void addToCart() {
+
+        SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
+        String loginNumber = sharedPref.getString("number","0");
+
+
+
+        DatabaseReference addCartRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(loginNumber).child("Cart").child(productKey);
+
+        addCartRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.exists()){
+                    int qty = Integer.parseInt(snapshot.child("qty").getValue().toString());
+                    addCartRef.child("qty").setValue( Integer.toString(qty+quantity));
+                    Toast.makeText(ProductDetailsActivity.this, "Product added to cart successfully!.", Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    ref.child(productKey).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            addCartRef.child("qty").setValue(Integer.toString(quantity));
+                            addCartRef.child("type").setValue(snapshot.child("type").getValue().toString());
+                            addCartRef.child("price").setValue(snapshot.child("price").getValue().toString());
+                            addCartRef.child("name").setValue(snapshot.child("name").getValue().toString());
+                            addCartRef.child("image").setValue(snapshot.child("image").getValue().toString());
+                            Toast.makeText(ProductDetailsActivity.this, "Product added to cart successfully!.", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+
+
+                    });
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
 
