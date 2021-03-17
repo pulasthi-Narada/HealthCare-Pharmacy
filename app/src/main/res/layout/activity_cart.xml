@@ -53,7 +53,7 @@
                 android:textSize="20sp"
                 android:layout_marginRight="10dp"
                 android:textColor="@color/black"
-                android:text="m"/>
+                android:text="0"/>
             <View
                 android:id="@+id/CartActivity_layout_line"
                 android:layout_below="@+id/CartActivity_mrp_value"
@@ -85,7 +85,7 @@
                 android:layout_marginRight="10dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="m"/>
+                android:text="0"/>
 
             <Button
                 android:id="@+id/CartActivity_place_order_btn"
