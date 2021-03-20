@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,7 +48,7 @@ public class CartActivity extends AppCompatActivity {
     double price=0;
     TextView mrp,payble;
     Dialog dialog;
-
+    Button placeorder;
     DatabaseReference myRef,myRef2;
 
     @Override
@@ -60,6 +62,7 @@ public class CartActivity extends AppCompatActivity {
 
         mrp = findViewById(R.id.CartActivity_mrp_value);
         payble = findViewById(R.id.CartActivity_total_value);
+        placeorder = findViewById(R.id.CartActivity_place_order_btn);
 
         SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
         String loginNumber = sharedPref.getString("number","0");
@@ -198,6 +201,17 @@ public class CartActivity extends AppCompatActivity {
 
         adapter.startListening();
         recyclerView.setAdapter(adapter);
+
+
+
+        placeorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, PlaceOrderDetailsActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 

@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthCarePharmacy">
-        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".PlaceOrderDetailsActivity"></activity>
+        <activity android:name=".CartActivity" />
         <activity android:name=".address.AddressViewDetailsActivity" />
         <activity android:name=".address.AddressViewActivity" />
         <activity android:name=".AddressDetailsActivity" />

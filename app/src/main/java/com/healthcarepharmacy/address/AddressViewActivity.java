@@ -39,8 +39,9 @@ public class AddressViewActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     DatabaseReference myRef;
-    TextView addNew;
+    TextView addNew, mainTextview;
     Dialog dialog;
+   int onClickValue=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,15 @@ public class AddressViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
 
         addNew = findViewById(R.id.all_address_layout_textView_add);
+        mainTextview = findViewById(R.id.all_address_layout_textView_mange);
+
+
+        if( getIntent().getStringExtra("addressChage").equals("111")){
+
+            addNew.setVisibility(View.INVISIBLE);
+            mainTextview.setText("Select An Address");
+            onClickValue =1;
+        }
 
 
 
@@ -77,51 +87,67 @@ public class AddressViewActivity extends AppCompatActivity {
         adapter= new FirebaseRecyclerAdapter<Address, AddressViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull AddressViewHolder holder, int position, @NonNull Address model) {
-               holder.getName().setText(model.getName());
-               holder.getAddress().setText(model.getAddress());
-               holder.getCity().setText(model.getCity());
-               holder.getProvince().setText(model.getProvince());
-               holder.getNumber().setText(model.getNumber());
-               holder.getMail().setText(model.getMail());
+                holder.getName().setText(model.getName());
+                holder.getAddress().setText(model.getAddress());
+                holder.getCity().setText(model.getCity());
+                holder.getProvince().setText(model.getProvince());
+                holder.getNumber().setText(model.getNumber());
+                holder.getMail().setText(model.getMail());
 
 
-               holder.getV().setOnLongClickListener(new View.OnLongClickListener() {
-                   @Override
-                   public boolean onLongClick(View view) {
+                if (onClickValue == 1) {
 
-                       dialog = new Dialog(AddressViewActivity.this);
-                       dialog.setContentView(R.layout.adddress_dilog_box);
-                      // dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.daillog_background));
-                       dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-                       dialog.setCancelable(true);
-                       dialog.show();
+                    holder.getV().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
 
-                       TextView edit = dialog.findViewById(R.id.address_dilog_box_edit_txt);
-                       TextView remove = dialog.findViewById(R.id.address_dilog_box_remove_txt);
+                            Toast.makeText(AddressViewActivity.this, "Address Select Successfully!", Toast.LENGTH_SHORT).show();
 
-                       edit.setOnClickListener(new View.OnClickListener() {
-                           @Override
-                           public void onClick(View view) {
-                               Toast.makeText(AddressViewActivity.this, "ok", Toast.LENGTH_SHORT).show();//Shows a message
-                               dialog.dismiss();
-
-                           }
-                       });
-
-                       remove.setOnClickListener(new View.OnClickListener() {
-                           @Override
-                           public void onClick(View view) {
-                               Toast.makeText(AddressViewActivity.this, "no", Toast.LENGTH_SHORT).show();
-                               dialog.dismiss();
-                           }
-                       });
+                        }
+                    });
 
 
 
+                }
 
-                       return true;
-                   }
-               });
+
+                    holder.getV().setOnLongClickListener(new View.OnLongClickListener() {
+                        @Override
+                        public boolean onLongClick(View view) {
+
+                            dialog = new Dialog(AddressViewActivity.this);
+                            dialog.setContentView(R.layout.adddress_dilog_box);
+                            // dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.daillog_background));
+                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            dialog.setCancelable(true);
+                            dialog.show();
+
+                            TextView edit = dialog.findViewById(R.id.address_dilog_box_edit_txt);
+                            TextView remove = dialog.findViewById(R.id.address_dilog_box_remove_txt);
+
+                            edit.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Toast.makeText(AddressViewActivity.this, "ok", Toast.LENGTH_SHORT).show();//Shows a message
+                                    dialog.dismiss();
+
+                                }
+                            });
+
+                            remove.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Toast.makeText(AddressViewActivity.this, "no", Toast.LENGTH_SHORT).show();
+                                    dialog.dismiss();
+                                }
+                            });
+
+
+                            return true;
+                        }
+                    });
+
+
 
 
 

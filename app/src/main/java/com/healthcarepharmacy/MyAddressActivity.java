@@ -40,8 +40,9 @@ public class MyAddressActivity extends AppCompatActivity {
 
                         if(!(addressCount==0)){
 
-                            Intent intent = new Intent(MyAddressActivity.this, AddressViewActivity .class);
-                            startActivity(intent);
+                            Intent intentA = new Intent(MyAddressActivity.this, AddressViewActivity .class);
+                            intentA.putExtra("addressChage","000");
+                            startActivity(intentA);
                             finish();
 
                         }
