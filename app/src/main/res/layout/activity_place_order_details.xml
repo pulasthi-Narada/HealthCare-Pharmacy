@@ -73,6 +73,7 @@
             android:id="@+id/PlaceOrderDetailsActivity_shdule_radioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Schedule a date" />
         </RadioGroup>
 

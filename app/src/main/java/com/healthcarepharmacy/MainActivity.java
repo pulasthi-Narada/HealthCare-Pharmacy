@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_Upload_Prescription,R.id.nav_Categories,R.id.nav_Search_Buy_Medicine,R.id.nav_my_address,R.id.nav_my_Prescription,R.id.nav_logout)
+                R.id.nav_home, R.id.nav_Upload_Prescription,R.id.nav_Categories,R.id.nav_Search_Buy_Medicine,R.id.nav_my_address,R.id.nav_my_Prescription,R.id.nav_logout,R.id.nav_myOrders)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -97,12 +97,14 @@ public class MainActivity extends AppCompatActivity {
 
 
                 switch (id){
-                    // if user select navigation Categories in menu then start  Categories Activity
+                    // if user select navigation Categories in menu then start  logoutActivity Activity
                     case R.id.nav_logout:
                         Intent intent = new Intent(MainActivity.this, logoutActivity.class);
                            startActivity(intent);
                            finish();
                         break;
+
+
 
 
                 }

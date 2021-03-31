@@ -19,11 +19,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthCarePharmacy">
-        <activity android:name=".PlaceOrderDetailsActivity"></activity>
-        <activity android:name=".CartActivity" />
-        <activity android:name=".address.AddressViewDetailsActivity" />
-        <activity android:name=".address.AddressViewActivity" />
-        <activity android:name=".AddressDetailsActivity" />
+        <activity android:name=".MyOrdersActivity"></activity>
+        <activity
+            android:name=".PlaceOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".address.AddressViewDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".address.AddressViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddressDetailsActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -32,6 +43,7 @@
         <activity
             android:name=".AddressMapActivity"
             android:label="@string/title_activity_address_map"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.HealthCarePharmacy.NoActionBar" />
         <activity android:name=".AddressPermissionActivity" />
 
@@ -39,16 +51,24 @@
             android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="ocr" />
 
-        <activity android:name=".logoutActivity" />
+        <activity
+            android:name=".logoutActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ProductDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".product_recyclerview_Activity"
             android:screenOrientation="portrait" />
-        <activity android:name=".UploadExistingImageActivity" />
-        <activity android:name=".SearchBuyMedicineActivity" />
-        <activity android:name=".MyAddressActivity" />
+        <activity
+            android:name=".UploadExistingImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SearchBuyMedicineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyAddressActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait">

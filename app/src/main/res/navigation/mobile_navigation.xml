@@ -45,6 +45,12 @@
         android:label="@string/my_Prescription"
         tools:layout="@layout/activity_logout" />
 
+    <activity
+        android:id="@+id/nav_myOrders"
+        android:name="com.healthcarepharmacy.MyOrdersActivity"
+        android:label="@string/my_orders"
+        tools:layout="@layout/activity_my_orders" />
+
 
 
 

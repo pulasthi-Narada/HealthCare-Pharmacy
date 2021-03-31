@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.healthcarepharmacy.AddressDetailsActivity;
 import com.healthcarepharmacy.LoginActivity;
 import com.healthcarepharmacy.MyAddressActivity;
+import com.healthcarepharmacy.PlaceOrderDetailsActivity;
 import com.healthcarepharmacy.ProductDetailsActivity;
 import com.healthcarepharmacy.R;
 import com.healthcarepharmacy.product.Product;
@@ -102,6 +103,12 @@ public class AddressViewActivity extends AppCompatActivity {
                         public void onClick(View view) {
 
                             Toast.makeText(AddressViewActivity.this, "Address Select Successfully!", Toast.LENGTH_SHORT).show();
+                            Intent selectedAddressIntent = new Intent(AddressViewActivity.this, PlaceOrderDetailsActivity.class);
+                            selectedAddressIntent.putExtra("selectedAddresskey",getRef(position).getKey());
+                            selectedAddressIntent.putExtra("PlaceOrderDetailsActivityDate2",getIntent().getStringExtra("PlaceOrderDetailsActivityDate"));
+                            startActivity(selectedAddressIntent);
+                            finish();
+
 
                         }
                     });

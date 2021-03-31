@@ -51,6 +51,7 @@ public class CartActivity extends AppCompatActivity {
     Button placeorder;
     DatabaseReference myRef,myRef2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,9 +169,6 @@ public class CartActivity extends AppCompatActivity {
 
 
 
-                                }else {
-//                                    mrp.setText("0");
-//                                    payble.setText("0");
                                 }
                             }
 
@@ -207,8 +205,29 @@ public class CartActivity extends AppCompatActivity {
         placeorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CartActivity.this, PlaceOrderDetailsActivity.class);
-                startActivity(intent);
+
+                myRef2.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        if(snapshot.child("Cart").exists()){
+
+                            Intent intent = new Intent(CartActivity.this, PlaceOrderDetailsActivity.class);
+                            intent.putExtra("selectedAddresskey", "zzz");
+                            intent.putExtra("PlaceOrderDetailsActivityDate2", "000");
+                            startActivity(intent);
+
+                        }else {
+                            Toast.makeText(CartActivity.this, "No Product In Your Cart.", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
         });
