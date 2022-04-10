@@ -36,7 +36,7 @@ import com.squareup.picasso.Picasso;
 public class AddressViewActivity extends AppCompatActivity {
     FirebaseRecyclerOptions<Address> options;
     FirebaseRecyclerAdapter<Address, AddressViewHolder> adapter;
-
+   //
     RecyclerView recyclerView;
 
     DatabaseReference myRef;

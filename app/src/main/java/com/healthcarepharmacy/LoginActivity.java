@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
     private void Login() {
 
 
-        DatabaseReference customer_login = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers");//This is the database reference
+        DatabaseReference customer_login = FirebaseDatabase.getInstance().getReference().child("Users").child("Pharmacy");//This is the database reference
 
 
 

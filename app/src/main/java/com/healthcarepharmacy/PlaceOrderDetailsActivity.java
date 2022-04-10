@@ -9,6 +9,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Location;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.util.Log;
@@ -47,6 +48,8 @@ public class PlaceOrderDetailsActivity extends AppCompatActivity implements Date
     RadioButton radioButton;
     Button placeOrder;
     double price;
+    Double latitude,longitude;
+    String pLatitude,pLongitude;
 
 
     @Override
@@ -289,8 +292,13 @@ public class PlaceOrderDetailsActivity extends AppCompatActivity implements Date
                                         myRef.child("Order").child(key1).child("latitude").setValue(snapshot.child("Address").child(selectedAddresskey).child("latitude").getValue().toString());
                                        myRef.child("Order").child(key1).child("longitude").setValue(snapshot.child("Address").child(selectedAddresskey).child("longitude").getValue().toString());
 
+                                       latitude= Double.parseDouble(snapshot.child("Address").child(selectedAddresskey).child("latitude").getValue().toString());
+                                       longitude= Double.parseDouble(snapshot.child("Address").child(selectedAddresskey).child("longitude").getValue().toString());
 
-                                    }
+                                Toast.makeText(getApplicationContext(),Double.toString(latitude)+" "+Double.toString(longitude),Toast.LENGTH_SHORT).show();
+
+
+                            }
 
 
                         }
@@ -309,6 +317,9 @@ public class PlaceOrderDetailsActivity extends AppCompatActivity implements Date
         });
 
 
+           sentOrderPharmacy();
+
+
             myRef.child("Cart").removeValue();
             Toast.makeText(getApplicationContext(),"Successfully Request Your Order!",Toast.LENGTH_SHORT).show();
 
@@ -317,6 +328,105 @@ public class PlaceOrderDetailsActivity extends AppCompatActivity implements Date
             finish();
 
 
+
+
+
+    }
+
+    private void sentOrderPharmacy() {
+
+        Time now = new Time();
+        now.setToNow();
+        int month = now.month+1;
+
+
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("Users").child("Pharmacy").child("123456789");
+        SharedPreferences sharedPref = getSharedPreferences("login", MODE_PRIVATE);
+        String loginNumber = sharedPref.getString("number", "0");
+        // database Reference
+        DatabaseReference myRef2 = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers").child(loginNumber);
+        String key1 =  myRef.child("Order").push().getKey();
+        String key2 =  myRef.child("Order").child(key1).child("product").push().getKey();
+
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.child("Location").exists()) {
+
+                    pLatitude= snapshot.child("Location").child("latitude").getValue().toString();
+                    pLongitude= snapshot.child("Location").child("longitude").getValue().toString();
+               //     Toast.makeText(getApplicationContext(),Double.toString(pLatitude)+" "+Double.toString(pLongitude),Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
+
+
+        Location locationA = new Location("point A");
+        latitude =6.906359;
+      //  latitude =mn;
+
+        longitude =79.870625;
+
+
+        locationA.setLatitude(latitude);
+        locationA.setLongitude(longitude);
+
+        Location locationB = new Location("point B");
+
+        locationB.setLatitude(6.897436);
+        locationB.setLongitude(79.859886);
+
+        double distance = locationA.distanceTo(locationB)/1000;
+
+          //   Toast.makeText(getApplicationContext(),Double.toString(latitude),Toast.LENGTH_SHORT).show();
+         Toast.makeText(getApplicationContext(),Double.toString(distance)+"KM",Toast.LENGTH_SHORT).show();
+
+
+        if(distance<=20.0){
+
+            String key =   myRef.child("Orders").push().getKey();
+            myRef.child("Orders").child(key).child("name").setValue("Diabetasol Vanilla Powder 360g");
+            myRef.child("Orders").child(key).child("total").setValue("1646.00");
+            myRef.child("Orders").child(key).child("qty").setValue("1");
+
+            myRef.child("Order").child(key1).child("OrderAt").setValue(now.year+","+Integer.toString(month)+","+now.monthDay+","+now.hour+","+now.minute+","+now.second);
+
+
+            myRef2.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    myRef.child("Order").child(key1).child("addressText").setValue(snapshot.child("Address").child(selectedAddresskey).child("address").getValue().toString());
+                    myRef.child("Order").child(key1).child("phoneNumber").setValue(snapshot.child("Address").child(selectedAddresskey).child("number").getValue().toString());
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+
+
+
+        }
 
 
 
