@@ -9,21 +9,21 @@ This project in development mode
 
 <h1><b>Screenshots </h1></b>
 
-<img src="related-items/images/register.png">
+<img src="related-items/images/register.png" style="width: 500px;">
  </br>                                          
- <img src="related-items/images/login.png">   
+ <img src="related-items/images/login.png" style="width: 500px;">   
  
- <img src="related-items/images/home.png">   
+ <img src="related-items/images/home.png" style="width: 500px;">   
   
- <img src="related-items/images/home2.png">
+ <img src="related-items/images/home2.png" style="width: 500px;">
   
-  <img src="related-items/images/upload-pres.png">
+  <img src="related-items/images/upload-pres.png" style="width: 500px;">
   
-  <img src="related-items/images/address.png">
+  <img src="related-items/images/address.png" style="width: 500px;">
   
-   <img src="related-items/images/set-location.png">
+   <img src="related-items/images/set-location.png" style="width: 500px;">
   
-   <img src="related-items/images/categories.png">
+   <img src="related-items/images/categories.png" style="width: 500px;">
  
 
 ------------ note ------------------</br>
