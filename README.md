@@ -2,7 +2,7 @@
 
 HealthCare Pharmacy is an online medicine ordering and delivery platform.
 
-<img src="related-items/images/Screenshot (103).png">
+<img src="related-items/images/img.png">
 
 This project in development mode
 
