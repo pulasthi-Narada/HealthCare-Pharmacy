@@ -1,12 +1,18 @@
 # HealthCare-Pharmacy
 
-HealthCare Pharmacy is an online medicine ordering and delivery platform.
+This project in development mode
+
+</b>HealthCare Pharmacy is an online medicine ordering and delivery platform.</b>
 
 <img src="related-items/images/img.png">
 
-This project in development mode
 
 
------------- note ------------------
-remove this server from sri lanka
+------------ note ------------------</br>
+
+remove this server from sri lanka</br>
+
+remove related items floder</br>
+
+remove google.json file</br>
 
