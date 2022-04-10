@@ -7,6 +7,24 @@ This project in development mode
 <img src="related-items/images/img.png">
 
 
+<h1><b>Screenshots </h1></b>
+
+<img src="related-items/images/register.png">
+ </br>                                          
+ <img src="related-items/images/login.png">   
+ 
+ <img src="related-items/images/home.png">   
+  
+ <img src="related-items/images/home2.png">
+  
+  <img src="related-items/images/upload-pres.png">
+  
+  <img src="related-items/images/address.png">
+  
+   <img src="related-items/images/set-location.png">
+  
+   <img src="related-items/images/categories.png">
+ 
 
 ------------ note ------------------</br>
 
