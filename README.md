@@ -48,3 +48,5 @@ get Storage backup</br>
 
 remove google.json file</br>
 
+<string name="google_maps_api">put your api key</string>
+
