@@ -35,7 +35,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="google_maps_api">AIzaSyCDWcrdvc9YXk6_1TLYFas7CG6gfI_Z3qg</string>
+    <string name="google_maps_api">put your api key</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
