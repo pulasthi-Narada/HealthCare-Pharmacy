@@ -95,10 +95,6 @@ public class AddressDetailsActivity extends AppCompatActivity {
             Toast.makeText(AddressDetailsActivity.this, "phone number can't be blank and phone number have 9 digit ", Toast.LENGTH_SHORT).show();
             return 0;
         }
-        else if( !(ccp.getSelectedCountryCode().toString().equalsIgnoreCase("94"))  ){
-            Toast.makeText(AddressDetailsActivity.this, "This services only available in  Sri lanka", Toast.LENGTH_SHORT).show();
-            return 0;
-        }
 
         else if(TextUtils.isEmpty(mail.getText().toString())){
             Toast.makeText(AddressDetailsActivity.this, "email can't be blank", Toast.LENGTH_SHORT).show();

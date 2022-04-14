@@ -122,10 +122,10 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "phone number can't be blank and phone number have 9 digit ", Toast.LENGTH_SHORT).show();
             return 0;
         }
-        else if( !(ccp.getSelectedCountryCode().toString().equalsIgnoreCase("94"))  ){
-            Toast.makeText(RegisterActivity.this, "This services only available in  Sri lanka", Toast.LENGTH_SHORT).show();
-            return 0;
-        }
+//        else if( !(ccp.getSelectedCountryCode().toString().equalsIgnoreCase("94"))  ){
+//            Toast.makeText(RegisterActivity.this, "This services only available in  Sri lanka", Toast.LENGTH_SHORT).show();
+//            return 0;
+//        }
         else if( TextUtils.isEmpty(password.getText().toString())  ){
             Toast.makeText(RegisterActivity.this, "password can't be blank ", Toast.LENGTH_SHORT).show();
             return 0;

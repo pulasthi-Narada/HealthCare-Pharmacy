@@ -63,12 +63,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
+//                Intent LoginActivityintent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(LoginActivityintent);
+//                finish();
+
                 if(RegInputValidation()==1) {
 
                     phoneNumberWithCountryCode="+"+ccp.getSelectedCountryCode()+phoneNumber.getText().toString();
+
                     Login();
 
-                }
+               }
 
             }
         });
@@ -79,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+
+
             }
         });
     }
@@ -118,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
     private void Login() {
 
 
-        DatabaseReference customer_login = FirebaseDatabase.getInstance().getReference().child("Users").child("Pharmacy");//This is the database reference
+        DatabaseReference customer_login = FirebaseDatabase.getInstance().getReference().child("Users").child("Customers");//This is the database reference
 
 
 
@@ -141,11 +148,11 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
 
                     }else {
-                        Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();//If the password is typed incorrectly this message is shown.
+                        Toast.makeText(LoginActivity.this, "Login failed 1", Toast.LENGTH_SHORT).show();//If the password is typed incorrectly this message is shown.
                     }
 
                 }else {
-                    Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();//If the phone number is typed incorrectly this message is shown.
+                    Toast.makeText(LoginActivity.this, "Login failed 2", Toast.LENGTH_SHORT).show();//If the phone number is typed incorrectly this message is shown.
                 }
             }
 
@@ -175,10 +182,10 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "phone number can't be blank and phone number have 9 digit ", Toast.LENGTH_SHORT).show();
             return 0;
         }
-        else if( !(ccp.getSelectedCountryCode().toString().equalsIgnoreCase("94"))  ){
-            Toast.makeText(LoginActivity.this, "This services only available in  Sri lanka", Toast.LENGTH_SHORT).show();
-            return 0;
-        }
+//        else if( !(ccp.getSelectedCountryCode().toString().equalsIgnoreCase("94"))  ){
+//            Toast.makeText(LoginActivity.this, "This services only available in  Sri lanka", Toast.LENGTH_SHORT).show();
+//            return 0;
+//        }
         else if( TextUtils.isEmpty(password.getText().toString())  ){
             Toast.makeText(LoginActivity.this, "password can't be blank ", Toast.LENGTH_SHORT).show();
             return 0;
